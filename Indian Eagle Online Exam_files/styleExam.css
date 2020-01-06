@@ -1,0 +1,1131 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    background-color:#FFFFFF;
+	margin:0px;
+	padding:0px;
+	font-family: 'DroidSansRegular';
+	font-size:12px;
+}
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('DroidSans-webfont.eot');
+    src: url('DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DroidSans-webfont.woff') format('woff'),
+         url('DroidSans-webfont.ttf') format('truetype'),
+         url('DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#Loginwrapper{
+	width:365px;
+	margin:0px auto;		
+}
+.LoginBox{
+	background-image:url(../images/Loginbox.png);
+	background-repeat:no-repeat;
+	width:363px;
+	height:226px;
+	margin-top:30px;
+	padding:20px 0px 0px 10px;
+}
+.CandidateText{
+	color:#383737;
+	font-size:16px;
+}
+.dottedline{
+	height:22px;
+	border-top:2px dotted #9E9E9E;
+	margin-top:4px;
+	width:324px;	
+}
+.dottedline760{
+	height:22px;
+	border-top:2px dotted #9E9E9E;
+	margin-top:4px;
+	width:743px;
+	margin-left:17px;
+}
+.form{
+	margin-left:12px;
+	margin-bottom:10px;	
+}
+.form label{
+	color:#6e6c6b;
+	font-size:14px;
+	width:141px;
+	float:left;
+	line-height:20px;
+}
+.form input.InputBox{
+	color:#000000;
+	font-family: 'DroidSansRegular';
+	height:20px;
+	width:169px;
+	border:1px solid #000000;
+	padding-left:5px;
+	font-size:12px;	
+	line-height:20px;
+}
+.form label.InputBox{
+	color:#000000;
+	font-family: 'DroidSansRegular';
+	height:20px;
+	width:169px;
+	border:1px solid #f2f2f2;
+	padding-left:5px;
+	font-size:12px;	
+	line-height:20px;
+}
+.form input.SmallInputBox{
+	color:#000000;
+	font-family: 'DroidSansRegular';
+	height:20px;
+	width:64px;
+	border:1px solid #000000;
+	font-size:12px;	
+	line-height:20px;
+	text-align:center;
+}
+.form input.YSPLInputBox{
+	color:#000000;
+	font-family: 'DroidSansRegular';
+	height:20px;
+	width:54px;
+	/*border:1px solid #000000;*/
+	font-size:12px;
+	line-height:20px;
+	text-align:center;
+}
+
+.form input.DDInputBox{
+	color:#000000;
+	font-family: 'DroidSansRegular';
+	height:20px;
+	width:50px;
+	border:1px solid #000000;
+	font-size:12px;	
+	line-height:20px;
+	text-align:center;
+}
+.Countinue{
+	margin-right:40px;
+}
+.Errormessage{
+	font-size:11px;
+	color:#F00;
+}
+.footer{
+    float:left;
+	color:#585755;
+	left:0px;
+	bottom:-10px;
+	text-align:center;
+	width:100%;
+	font-size:10px;
+}
+.footerlogin{
+	color:#6E6C6B;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	text-align:center;
+	width:100%;
+	font-size:11px;
+}
+/*----- Profile CSS ----*/
+.CandidateProfileText{
+	color:#383737;
+	font-size:16px;
+	padding-left:17px;
+}
+#ProfileWrapper{
+	margin:0px auto;
+	width:799px;			
+}
+.ProfileTop{
+	float:left;
+	background-image:url(../images/Profile_Top_Box.png);
+	background-repeat:no-repeat;
+	width:799px;
+	height:4px;
+	margin-top:30px;
+}
+.ProfileMid{
+	float:left;
+	background-image:url(../images/Profile_Middle_Box.png);
+	background-repeat:repeat-y;
+	width:799px;
+	padding:20px 0px 0px 10px;
+}
+.ProfileBtm{
+	background-image:url(../images/Profile_bottom_Box.png);
+	background-repeat:no-repeat;
+	width:799px;
+	height:7px;
+	float:left;
+}
+.ProfileLeftSide{
+	width:400px;
+	float:left;
+	padding-left:20px;
+}
+.ProfileLeftSide .form{
+	float:left;
+}
+.ProfileRightSide .form{
+	float:left;
+}
+.ProfileRightSide{
+	float:left;
+	width:360px;
+}
+.EducationWrapper{
+	color:#6e6c6b;
+	height:20px;
+	width:707px;
+	background-color:#f9f8f7;
+	float:left;
+	padding-left:10px;
+	font-size:14px;
+	line-height:23px;
+	margin-bottom:15px;
+	margin-left:27px;
+}
+.EducationalDiv{
+	float:left;
+	margin-bottom:15px;
+	margin-left:15px;
+}
+.QualificationDiv{
+	float:left;
+	width:165px;
+	height:20px;
+	border:1px solid #f2f2f2;
+	margin-left:12px;
+	line-height:22px;
+	padding-left:10px;
+	color:#000000;
+	font-size:12px;
+}
+.UniversityDiv{
+	float:left;
+	width:299px;
+	height:20px;
+	border:1px solid #f2f2f2;
+	margin-left:12px;
+	line-height:22px;
+	padding-left:10px;
+	color:#000000;
+	font-size:12px;
+}
+.YearDiv{
+	float:left;
+	width:103px;
+	height:20px;
+	border:1px solid #f2f2f2;
+	margin-left:12px;
+	line-height:22px;
+	padding-left:10px;
+	color:#000000;
+	font-size:12px;
+}
+.PercentageDiv{
+	float:left;
+	width:66px;
+	height:20px;
+	border:1px solid #f2f2f2;
+	margin-left:12px;
+	line-height:22px;
+	padding-left:10px;
+	color:#000000;
+	font-size:12px;
+}
+.solidline760{
+	height:15px;
+	border-top:2px dotted #9E9E9E;
+	margin-top:15px;
+	width:743px;
+	margin-left:17px;
+    float:left;
+}
+.ProfileNote{
+   float:left;
+   color:#908f8d;
+   font-size:14px;
+   padding-left:17px;
+   margin-bottom:7px;
+   margin-left:25px;
+   margin-top:10px;
+   margin-bottom:12px;
+   width:703px;
+   background-color:#f9f8f6;
+   height:28px;
+   line-height:28px;
+   }
+.Instructions{
+float:left;
+margin-left:42px;
+font-size:14px;
+width:200px;
+color:#f01818;
+}
+.Instructionsnav{
+float:left;
+margin:0px;
+font-size:14px;
+list-style-type:none;
+padding-left:10px;
+}
+.Instructionsnav li{
+margin:0px;
+font-size:14px;
+list-style-type:none;
+margin-bottom:5px;
+}
+.Instructionsnav span{
+color:#f01818;
+}
+
+
+.ProfileCountinue{
+    float:right;
+	margin-right:55px;
+    margin-top:55px;
+    margin-bottom:10px;
+}
+
+/*------OnlineExam CSS -----*/
+.QuestionHeading{
+	color:#f76710;
+	width:730px;
+	background-color:#f9f8f7;
+	float:left;
+	padding-left:1px;
+	font-size:12px;
+	line-height:23px;
+	margin-bottom:15px;
+	margin-left:15px;
+}
+.questionalphawrapper{
+	float:left;
+	width:730px;
+	margin-left:15px;
+}
+.questionone{
+	float:left;
+	font-size:13px;
+	margin-bottom:8px;
+}
+.Radio{
+	float:left;
+	width:15px;
+	margin-right:10px;
+	margin-top:-2px;
+}
+.Text{
+	float:left;
+	width:705px;
+	line-height:20px;
+	padding-left:0px;
+    font-size:10px;
+}
+td{
+	vertical-align:middle;
+}
+.code{
+	background-color: #F8F8F8;
+    border: 1px dashed #93B7D5;
+    padding: 10px;
+}
+.BG{
+	float:left;
+	background: url(../images/GradientBG.png);
+	width:100%;
+	background-repeat:repeat-x;
+}
+.blue{
+	color:#0000FF;
+}
+.red{
+	 color: #EE3B3B;
+}
+.green{
+	 color: #009900;
+}
+.SucessText{
+	font-size:24px;
+	color:#427d08;
+}
+.ThanksText{
+	font-size:18px;
+	color:#6e6c6b;
+	padding-bottom:15px;
+	padding-top:10px;
+}
+.Submitest{
+	margin-right:55px;
+	margin-bottom:10px;
+}
+
+.SucessText{
+font-size:24px;
+color:#427d08;
+}
+.ThanksText{
+font-size:18px;
+color:#6e6c6b;
+padding-bottom:15px;
+padding-top:10px;
+}
+
+/*-----New Design -----*/
+	.LeftShade{
+		background-image:url(../images/Yana_Exam_Left_BG.jpg);
+		background-repeat:repeat-y;
+		width:19px;	
+	}
+	.RightShade{
+		background-image:url(../images/Yana_Exam_Right_BG.jpg);
+		background-repeat:repeat-y;
+		width:19px;	
+	}
+	.FooterBgImage{
+		background-image:url(../images/Footer_bg.png); 
+		background-repeat:repeat-x; 
+		height:13px;"
+	}
+	.TopOrangeStrip{
+		background-color:#f79911;
+		height:7px;	
+	}
+	.Logo{
+		margin:22px 0px 0px 27px;	
+	}
+	.Stagline{
+		margin:83px 27px 0px 0px;
+	}
+	.LoGinContent{
+		
+	}
+.ContentBg{
+	margin-top:10px;	
+	width:852px;
+	float: left;
+}
+.Body_Left{
+	float:left;
+	margin-top:8px;
+	margin-left:20px;
+	width:718px;	
+}
+.jobApplicationWrapper{
+	margin:0px auto;
+	width:709px;
+}
+.applicant_information{
+	float:left;
+	width:790px;
+	color:#FFF;
+	background-color:#6CA2D3;
+	font-size:14px;
+	padding:6px;
+}
+.personal_particularsHeader{
+	float:left;
+	background-color:#F5F5F6;
+	margin-top:5px;
+	width:800px;
+}
+.personal_particularsHeaderText{
+	float:left;
+	color:#0F5391;
+	font-size:14px;
+	font-family:Arial;
+	border-left:2px solid #f57900;
+	padding:5px;
+	width:643px;
+}
+.vertical_line{
+	background:url(../images/LineVertical.png) no-repeat;
+	width:3px;
+	height:26px;
+	float:left;
+}
+.personal_paticulars{	
+	float:left;
+	margin-top:12px;
+}
+.personal_paticularsLPart{	
+	color: #595959;
+    float: left;
+    margin-left: 14px;
+    width: 377px;
+}
+.personal_llText{
+	float:left;
+	width:133px;
+	margin-top:4px;
+	font-size:12px;
+	clear:both;
+}
+.starMark{
+    color:#E27307;
+    font-family: 'DroidSansRegular';
+}
+.personal_lInputFields{
+	background: url("../images/Text_box_bg.gif") repeat-x;
+    border: 1px solid #D7D7DB;
+	color: #595959;
+	font-size:12px;
+    float: left;
+    height: 19px;
+    margin-bottom: 8px;
+    width: 235px;
+}
+.personal_lInputDOBField{
+	background: url("../images/Text_box_bg.gif") repeat-x;
+    border: 1px solid #D7D7DB;
+	color:#595959;
+	font-size:12px;
+    float: left;
+    height: 19px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    width: 86px;
+	text-align:center;
+}
+/**************************Calendar.css************************************/
+#calender {
+	float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 10px;
+	margin:-1px 0px 0px 1px;
+    width: 204px;
+}
+#calenderTable {
+	display: none;
+	border-top:1px solid #D7D7DB;
+	position: absolute;
+	z-index:99;
+	top:0px !important;
+	left:0px !important;
+	width:206px;
+	margin-left:0px !important;
+	margin-top: 20px !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#calenderTable {
+		margin-left:0px;
+	}
+}
+.normalDay {	
+	color:#231F20;
+	font-family: 'DroidSansRegular';
+	font-size:9px;
+	vertical-align:middle;
+	cursor: pointer;	
+	text-align:center;
+	background:url(../images/Cell_Grey.png) no-repeat;
+	width:31px;
+	height:28px;
+}
+.hlDay {	
+	font-family: 'DroidSansRegular';
+	font-size:9px;
+	vertical-align:middle;
+	color: #000;
+	cursor: pointer;
+	text-align:center;
+	background:url(../images/Cell_Grey.png) no-repeat;
+	width:31px;
+	height:28px;
+}
+.toDay {	
+	font-family: 'DroidSansRegular';
+	font-size:9px;
+	vertical-align:middle;
+	color:green;
+	text-align:center;
+	cursor: pointer;
+	background:url(../images/Cell_Grey.png) no-repeat;
+	width:31px;
+	height:28px;	
+}
+.choosenDay {
+	font-family: 'DroidSansRegular';
+	font-size:9px;
+	vertical-align:middle;
+	background:url(../images/choosenCell.png) no-repeat;
+	width:31px;
+	height:29px;
+	color: #0071BB;
+	text-align:center;
+	cursor: pointer;
+}
+.month{
+	width:20px;
+	height:10px;
+	float:left;
+	cursor:pointer;
+}
+.CalendarMonth{
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 10px;
+	margin:0px 0px 0px 2px;
+    width: 207px;
+}
+#calenderTableDays{
+	color: #82B061;
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 9px;
+    margin:5px 0px 0px 2px;
+}
+.MonthText{
+	float: left;
+    width: 29px;
+	text-align:center;
+}
+#monthText{
+	color: #2092CC;
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 10px;
+    margin-right: 5px;
+    text-align: center;
+    width: 55px;
+}
+#yearText{
+	color:#2092CC;
+	font-family: 'DroidSansRegular';
+	font-size:10px;
+	float:left;
+}
+#selectMonth, #selectMonth1, #selectMonth2, #selectMonth3, #selectMonth4, #selectMonth5, #selectMonth6, #selectMonth7, #selectMonth8, #selectMonth9, #selectMonth10, #selectMonth11, #selectMonth0 {
+	cursor:pointer;
+	color:#F05A24;
+	font-size:9px;
+	font-family: 'DroidSansRegular';
+	float:left;
+	margin-top:7px;	
+	width:34px;
+}
+.selectMonthNew{
+   color:#F05A24 !important;
+   background-color:none;
+}
+#showMonthAndYear{
+	color: #EFEEEE;
+    float: left;
+    font-family: Tahoma;
+    font-size: 12px;
+    margin: 1px 0 3px 22px;
+}
+.closeCalendar{
+	color: #FFFFFF;
+	cursor: pointer;
+	float: left;
+	font-family: tahoma;
+	font-size: 12px;
+	margin-right: 117px;
+	margin-top: 15px;
+}
+.selectMonth{
+    color:#0071BB !important;	
+}
+#rightArrow{
+	background:url(../images/ArrowOrange_Right.png) no-repeat;
+    cursor: pointer;
+    float: left;
+    height:15px;
+    margin:3px 8px 0px 0px;
+    width:14px;
+}
+#leftArrow{
+	background:url(../images/ArrowOrange_Left.png) no-repeat;
+    cursor: pointer;
+    float: left;
+    height:15px;
+	margin:4px 0px 0px 8px;
+    width:14px;
+}
+.calendarUpperStrip{
+	background:url(../images/Calendar_Top.png) no-repeat;
+	width:207px;
+	height:25px;
+	float:left;
+}
+.calendarMiddleStrip{
+	background:url(../images/Calendar_Middle.png) repeat-y;
+	width:207px;
+	float:left;
+}
+.calendarBottomStrip{
+	background:url(../images/CalendarBottomLine.png) no-repeat;
+	width:206px;
+	height:11px;
+	float:left;
+}
+.horizontalLine{
+	background:url(../images/HorizontalLine.png) no-repeat;
+    float: left;
+    height: 3px;
+    margin:3px 0px 0px 1px;
+    width:204px;
+}
+.horizontalLine1{
+	background:url(../images/HorizontalLine.png) no-repeat;
+    float: left;
+    height: 3px;
+	margin:-1px 0px 0px 1px;
+    width:204px;
+}
+.arrowWrapper{
+	float:left;
+	width:207px;
+}
+.monthYearWrapper{
+	 float:left;
+	 margin: 7px 0 0px 8px;
+	 width:92px;
+}
+.otherMonth{
+	color:#989898;
+	font-size:9px;
+	cursor: pointer;	
+	font-family: 'DroidSansRegular';
+	text-align:center;
+	vertical-align:middle;
+	background:url(../images/Cell_Grey.png) no-repeat;
+	width:31px;
+	height:28px;
+}
+.calendarImg{
+	background:url(../images/Calendar_OrangeSmall.png) no-repeat;
+	width:15px;
+	height:17px;
+	float:left;
+	margin-top:3px;
+
+}
+#calendarIcon{
+	background:url(../images/Calendar_OrangeSmall.png) no-repeat;
+	width:15px;
+	height:17px;
+	float:left;
+}
+.FromDate{
+	float:left;
+	color:#666666;
+	font-family: 'DroidSansRegular';
+	font-size:11px;
+	padding: 7px 3px 5px 5px;
+}
+/*----------------------------*/
+.personal_paticularsRPart{
+	float:left;
+	width:291px;
+	margin-left:27px;
+}
+.personal_rlText{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	margin-top:4px;
+	width:90px;
+}
+.personal_genderFields{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	margin-bottom:8px;
+}
+.genderButtons{
+	float:left;
+	margin: 2px 0 0 2px;
+}
+.genderClass{
+	float:left;
+	margin:7px 22px 0px 0px;
+}
+.personal_rbelow{
+	float: left;
+    margin-top: 24px;
+}
+.personal_rInputFields{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	width:197px;
+	background:url(../images/Text_box_bg.gif) repeat-x;
+	border:1px solid #d7d7db;
+	height:19px;
+	margin-bottom:8px;	
+}
+.skillsWrapper{
+    float:left;
+    margin-bottom:30px;
+    width:235px;
+}
+.hideGender{ opacity: 0; filter:alpha(opacity=0); }
+.ez-genderRadio{
+	background:url(../images/Radio_button.gif) no-repeat;
+    float: left;
+    height: 18px;
+    margin: 4px 8px 4px 0;
+    width: 15px;
+}
+.ez-genderRadioselected{
+	background:url(../images/Radio_button_hover.gif) no-repeat;
+	width:15px;
+	height:18px;
+	float:left;	
+}
+span.skills_select{
+	background: url("../images/Text_box_bg.gif") repeat-x scroll 0 0 transparent;
+    border-color: #D7D7DB;
+    border-style: solid;
+    border-width: 1px;
+    color: #595959;
+    display: block;
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 12px;
+    height: 19px;
+    line-height: 22px;
+    margin-top: -20px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 4px;
+    white-space: nowrap;
+    width: 186px;
+    z-index: 1;
+}
+select.skills_select{
+	position:relative;	
+	width:186px;
+	height:19px;	
+	float:left;
+	cursor:pointer;
+	font-size:12px;	
+	font-family: 'DroidSansRegular';
+	color:#595959;
+	margin-left:1px;	
+}
+
+select.month_dropdown_New{
+	position:relative;	
+	width:59px;
+	height:19px;	
+	float:left;
+	cursor:pointer;
+	font-size:12px;	
+	font-family: 'DroidSansRegular';
+	color:#595959;
+	margin-left:-55px;	
+}
+
+span.month_dropdown{
+	background: url("../images/Text_box_bg.gif") repeat-x scroll 0 0 transparent;
+    border-color: #D7D7DB;
+    border-style: solid;
+    border-width: 1px;
+    color: #595959;
+    display: block;
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 12px;
+    height: 19px;
+    line-height: 22px;
+	margin-left:91px;
+    margin-top: -20px;
+    overflow: hidden;
+    position: relative;
+    text-indent: 4px;
+    white-space: nowrap;
+    width: 59px;
+    z-index: 1;
+}
+select.month_dropdown{
+	position:relative;	
+	width:59px;
+	height:19px;	
+	float:left;
+	cursor:pointer;
+	font-size:12px;	
+	font-family: 'DroidSansRegular';
+	color:#595959;
+	margin-left:1px;	
+}
+.SelectImg{
+	background:url(../images/Drop_down_Arrow.png) no-repeat;
+	cursor: pointer;
+    display: block;
+    float: left;
+    height: 6px;
+    margin-left: -19px;
+    margin-top: -12px;
+    position: relative;
+    width: 13px;
+    z-index: 1;	
+}
+.add_button{
+	 background: url("../images/Text_box_bg.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #D7D7DB;
+    color: #E27307;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 21px;
+    margin-left:7px;
+    margin-top: -20px;
+    padding-bottom: 2px;
+    text-align: center;
+    width: 40px;
+}
+.apply_button{
+	background: url("../images/apply_button.jpg") no-repeat scroll 0 0 transparent;
+    float: right;
+    height: 24px;
+    margin-bottom: 15px;
+    margin-right: -80px;
+    width: 86px;
+    cursor:pointer;
+}
+.personal_calImg{
+	background:url(../images/Cal_Icon.gif) no-repeat;
+	width:17px;
+	height:22px;
+	float:left;
+	margin-top:-2px;
+	cursor:pointer;
+}
+.horizontal_line{
+	background-color: #F5F5F6;
+    float: left;
+    height: 4px;
+    margin-bottom: 17px;
+    margin-top: 10px;
+    width: 800px;
+}
+.educational_infoFields{
+	float:left;	
+}
+.Add_button_Education, .delete{
+	background: url("../images/Text_box_bg.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #D7D7DB;
+    color: #0099CC;
+    float: left;
+    font-size: 9px;
+    height: 17px;
+    line-height: 20px;
+    text-align: center;
+    width:33px;
+	margin-left:13px;
+	margin-top:5px;
+	cursor:pointer;
+}
+.marksPecField{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	width:70px;
+	text-indent:5px;
+	line-height:19px;
+	background:url(../images/Text_box_bg.gif) repeat-x;
+	border:1px solid #d7d7db;
+	height:19px;
+	margin-top:5px;
+}
+.yearOfPassField{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	width:88px;
+	text-indent:5px;
+	line-height:19px;
+	background:url(../images/Text_box_bg.gif) repeat-x;
+	border:1px solid #d7d7db;
+	height:19px;
+	margin:5px 22px 0px 0px;
+}
+.examinationField{
+	float:left;
+	color:#595959;
+	font-size:12px;
+	width:131px;
+	text-indent:5px;
+	line-height:19px;
+	background:url(../images/Text_box_bg.gif) repeat-x;
+	border:1px solid #d7d7db;
+	height:19px;
+	margin:5px 20px 0px 0px;
+}
+.QualificationField{
+	background: url("../images/Text_box_bg.gif") repeat-x;
+    border: 1px solid #D7D7DB;
+    color: #595959;
+    float: left;
+    font-size: 12px;
+	text-indent:5px;
+	line-height:19px;
+    height: 19px;
+    margin: 5px 20px 0 10px;
+    width: 280px;
+}
+.educational_infoWrapper{
+	float:left;	
+	margin-top:10px;
+	width:707px;	
+}
+.educational_infoHeaddings{
+	float:left;
+	color:#E27307;
+	font-size:12px;
+}
+.educational_infoFields{
+	float:left;	
+}
+.Qualification{
+	float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 302px;
+}
+.examination{
+	float: left;
+    margin-top: 6px;
+    width: 154px;
+}
+.yearOfPass{
+	float: left;
+    margin-top: 6px;
+    width: 111px;
+}
+.marksPec{
+	float: left;
+    margin-top: 6px;
+}
+.genderClass{
+	float:left;
+	margin:7px 22px 0px 0px;
+}
+.hideGender{ opacity: 0; filter:alpha(opacity=0); }
+.horizontal_line1{
+	background-color: #F5F5F6;
+    float: left;
+    height: 4px;
+    margin-bottom:0px;
+    margin-top: 0px;
+    width: 800px;
+    clear:both;
+}
+select.stateDropDown{
+	color: #595959;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 19px;
+    line-height: 21px;
+    position: absolute;
+    width: 237px;
+}
+span.stateDropDown{
+    background: url("../images/Text_box_bg.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #D7D7DB;
+    color: #595959;
+    cursor: default;
+    float: left;
+    font-family: 'DroidSansRegular';
+    font-size: 12px;
+    height: 18px;
+    line-height: 21px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 5px;
+    white-space: nowrap;
+    width: 235px;
+}
+.stateSelectImg{
+    background: url("../images/Drop_down_Arrow.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: left;
+    height: 6px;
+    margin-left: 219px;
+    margin-top: 8px;
+    position: absolute;
+    width: 13px;
+}
+#SearchLeftDoubleArrow{
+	background:url(../images/CalendarDoubleArrowLeft.png) no-repeat;
+	width:22px;
+	height:15px;
+	float:left;
+	margin:4px 0 0 10px;
+	cursor:pointer;
+}
+#SearchRightDoubleArrow{
+	background:url(../images/CalendarDoubleArrowRight.png) no-repeat;
+	float:left;
+	height:15px;
+	width:22px;
+	margin-top:4px;
+	cursor:pointer;
+}
+#closeCalendar{
+	float: left; 
+	margin-left: 94px;
+	margin-top: 10px;
+	font-family: 'DroidSansRegular';
+	font-size:11px;
+	color:#2092CC;
+	cursor: pointer;
+}
+.Success_Message_GreenText{
+    font-family: 'DroidSansRegular';
+    font-size:20px;
+    color: #427d07;
+    text-decoration:none;
+    text-align:center;
+    line-height:32px;
+    width:740px;
+    margin:0px auto;
+}
+.Yana_Text_Yellow{
+    font-family: 'DroidSansRegular';
+    font-size:20px;
+    color:#f79910;
+    text-decoration:none;
+}
+.Success_Message_GrayText{
+    color: #6E6C6B;
+    font-family: 'DroidSansRegular';
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+a.Blue_link{
+    font-family: 'DroidSansRegular';
+    font-size:13px;
+    color:#0c8ae2;
+    text-decoration:none;
+}
+a.Blue_link:hover{
+    font-family: 'DroidSansRegular';
+    font-size:13px;
+    color:#0c1207;
+    text-decoration: underline;
+}
+
+.ProfileMidSucess{
+	float:left;
+	background-image:url(../images/Profile_Middle_Box.png);
+	background-repeat:repeat-y;
+	width:799px;
+	padding:20px 0px 0px 0px;
+}

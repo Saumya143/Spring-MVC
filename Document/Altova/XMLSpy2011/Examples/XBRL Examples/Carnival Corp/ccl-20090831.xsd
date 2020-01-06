@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--  EDGAR Online I-Metrix Xcelerate Taxonomy Schema, based on XBRL 2.1  http://www.edgar-online.com/  -->
+<!--  Version: 6.0.14 -->
+<!--  Creation date: 2009-09-30T10:10Z -->
+<!--  Copyright (c) 2005-2009 EDGAR Online, Inc. All Rights Reserved. -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ccl="http://www.carnival.com/20090831"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:us-types="http://xbrl.us/us-types/2009-01-31"
+  targetNamespace="http://www.carnival.com/20090831"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <annotation>
+    <appinfo>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/StatementOfIncomeAlternative" id="IMetrix_StatementOfIncomeAlternative">
+        <link:definition>101 - Statement - CARNIVAL CORPORATION &amp; PLC CONSOLIDATED STATEMENTS OF OPERATIONS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassified" id="IMetrix_StatementOfFinancialPositionClassified">
+        <link:definition>102 - Statement - CARNIVAL CORPORATION &amp; PLC CONSOLIDATED BALANCE SHEETS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassifiedParenthetical" id="IMetrix_StatementOfFinancialPositionClassifiedParen">
+        <link:definition>103 - Statement - CARNIVAL CORPORATION &amp; PLC CONSOLIDATED BALANCE SHEETS (Parenthetical)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/StatementOfCashFlowsIndirect" id="IMetrix_StatementOfCashFlowsIndirect">
+        <link:definition>104 - Statement - CARNIVAL CORPORATION &amp; PLC CONSOLIDATED STATEMENTS OF CASH FLOWS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsOrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsOrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock">
+        <link:definition>105 - Disclosure - NOTE 1 - Basis of Presentation</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDebtDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsDebtDisclosureTextBlock">
+        <link:definition>106 - Disclosure - NOTE 2 - Debt</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsContingenciesDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsContingenciesDisclosureTextBlock">
+        <link:definition>107 - Disclosure - NOTE 3 - Contingencies</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsComprehensiveIncomeNoteTextBlock" id="IMetrix_NotesToFinancialStatementsComprehensiveIncomeNoteTextBlock">
+        <link:definition>108 - Disclosure - NOTE 4 - Comprehensive Income</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsSegmentReportingDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsSegmentReportingDisclosureTextBlock">
+        <link:definition>109 - Disclosure - NOTE 5 - Segment Information</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsEarningsPerShareTextBlock" id="IMetrix_NotesToFinancialStatementsEarningsPerShareTextBlock">
+        <link:definition>110 - Disclosure - NOTE 6 - Earnings Per Share</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsFairValueMeasurementInputsDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsFairValueMeasurementInputsDisclosureTextBlock">
+        <link:definition>111 - Disclosure - NOTE 7 - Fair Value Measurements, Derivative Instruments and Hedging Activities</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsStockholdersEquityNoteDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsStockholdersEquityNoteDisclosureTextBlock">
+        <link:definition>112 - Disclosure - NOTE 8 - Shareholders' Equity</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsMinorityInterestDisclosureTextBlock" id="IMetrix_NotesToFinancialStatementsMinorityInterestDisclosureTextBlock">
+        <link:definition>113 - Disclosure - NOTE 9 - Acquisition of Minority Interest</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock" id="IMetrix_NotesToFinancialStatementsDescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock">
+        <link:definition>114 - Disclosure - NOTE 10 - Recent Accounting Pronouncement</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/DocumentInformation" id="IMetrix_DocumentInformation">
+        <link:definition>115 - Disclosure - Document Information</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/EntityInformation" id="IMetrix_EntityInformation">
+        <link:definition>116 - Disclosure - Entity Information</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.carnival.com/taxonomy/role/CommonDomainMembers" id="IMetrix_CommonDomainMembers">
+        <link:definition>117 - Disclosure - Common Domain Members</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:href="ccl-20090831_cal.xml" xlink:title="Calculation Links, all"/>
+      <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:href="ccl-20090831_def.xml" xlink:title="Definition Links, all"/>
+      <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:href="ccl-20090831_lab.xml" xlink:title="Label Links, all"/>
+      <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:href="ccl-20090831_pre.xml" xlink:title="Presentation Links, all"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://xbrl.us/us-types/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-types-2009-01-31.xsd"/>
+  <import namespace="http://xbrl.us/us-gaap/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd"/>
+  <import namespace="http://xbrl.us/dei/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd"/>
+  <element name="AdditionalSeriesTreasuryStockShares" id="ccl_AdditionalSeriesTreasuryStockShares" type="xbrli:sharesItemType" abstract="false" xbrli:periodType="instant" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="CarnivalPLCMember" id="ccl_CarnivalPLCMember" type="us-types:domainItemType" abstract="false" xbrli:periodType="duration" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="ContingenciesDisclosureTextBlock" id="ccl_ContingenciesDisclosureTextBlock" type="us-types:textBlockItemType" abstract="false" xbrli:periodType="duration" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="CostOfOnboardAndOther" id="ccl_CostOfOnboardAndOther" type="xbrli:monetaryItemType" abstract="false" xbrli:periodType="duration" xbrli:balance="debit" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="CruiseCommissionsTransportationAndOther" id="ccl_CruiseCommissionsTransportationAndOther" type="xbrli:monetaryItemType" abstract="false" xbrli:periodType="duration" xbrli:balance="debit" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="DescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock" id="ccl_DescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock" type="us-types:textBlockItemType" abstract="false" xbrli:periodType="duration" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="NotesToFinancialStatementsAbstract" id="ccl_NotesToFinancialStatementsAbstract" type="xbrli:stringItemType" abstract="true" xbrli:periodType="duration" nillable="true" substitutionGroup="xbrli:item"/>
+  <element name="OnboardAndOther" id="ccl_OnboardAndOther" type="xbrli:monetaryItemType" abstract="false" xbrli:periodType="duration" xbrli:balance="credit" nillable="true" substitutionGroup="xbrli:item"/>
+</schema>

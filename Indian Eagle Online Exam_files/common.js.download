@@ -1,0 +1,710 @@
+// JavaScript Document
+(function($) {
+  $.fn.genderButtons = function(options) {
+	options = options || {}; 
+	var defaultOpt = { 		
+		checkboxCls : options.checkboxCls || 'ez-genderCheck' , radioCls : options.radioCls || 'ez-genderRadio' ,	
+		checkedCls  : options.checkedCls  || 'ez-genderchecked'  , selectedCls : options.selectedCls || 'ez-genderRadioselected' , 
+		hideCls  	 	: 'hideGender'
+	};
+   return this.each(function() {
+    	var jQuerythis = jQuery(this);
+    	var wrapTag = jQuerythis.attr('type') == 'checkbox' ? '<div class="'+defaultOpt.checkboxCls+'">' : '<div class="'+defaultOpt.radioCls+'">';
+    	// for checkbox
+    	if( jQuerythis.attr('type') == 'checkbox') {
+    		jQuerythis.addClass(defaultOpt.hideCls).wrap(wrapTag).change(function() {
+    			if( jQuery(this).is(':checked') ) { 
+    				jQuery(this).parent().addClass(defaultOpt.checkedCls); 
+    			} 
+    			else {	jQuery(this).parent().removeClass(defaultOpt.checkedCls); 	}
+    		});
+    		
+    		if( jQuerythis.is(':checked') ) {
+				jQuerythis.parent().addClass(defaultOpt.checkedCls);    		
+    		}
+    	} 
+    	else if( jQuerythis.attr('type') == 'radio') {
+    		jQuerythis.addClass(defaultOpt.hideCls).wrap(wrapTag).change(function() {
+    			// radio button may contain groups! - so check for group
+   				jQuery('input[name="'+jQuery(this).attr('name')+'"]').each(function() {
+   	    			if( jQuery(this).is(':checked') ) { 
+   	    				jQuery(this).parent().addClass(defaultOpt.selectedCls); 
+   	    			} else {
+   	    				jQuery(this).parent().removeClass(defaultOpt.selectedCls);     	    			
+   	    			}
+   				});
+    		});
+    		
+    		if( jQuerythis.is(':checked') ) {
+				jQuerythis.parent().addClass(defaultOpt.selectedCls);    		
+    		}    		
+    	}
+    });
+  }
+})($);
+$(document).ready(function(){
+  if (!$.browser.opera) {	
+		// select element styling		
+		$('#skills_selectId').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="skills_select" id="skills_selectSpanId">' + title + '</span><span class="SelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+					})
+					.focus(function(){
+						$("#skills_selectSpanId").addClass("outer");
+						})
+						.blur(function(){
+						$("#skills_selectSpanId").removeClass("outer");
+						})
+						.keyup(function(){
+						var selectedValue = $('option:selected',this).text();
+						document.getElementById('skills_selectSpanId').innerHTML = selectedValue;
+						})
+					
+		});
+		$('#educationDetailsListId').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="skills_select" id="educationDetailsListSpanId">' + title + '</span><span class="SelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+					})
+					.focus(function(){
+						$("#educationDetailsListSpanId").addClass("outer");
+						})
+						.blur(function(){
+						$("#educationDetailsListSpanId").removeClass("outer");
+						})
+						.keyup(function(){
+						var selectedValue = $('option:selected',this).text();
+						document.getElementById('educationDetailsListSpanId').innerHTML = selectedValue;
+						})
+					
+		});	
+		$('select.month_dropdown').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="month_dropdown" id="month_dropdown">' + title + '</span><span class="SelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+				})
+				.focus(function(){
+					$("span.month_dropdown").addClass("outer");
+				})
+				.blur(function(){
+					$("span.month_dropdown").removeClass("outer");
+				})
+				.keyup(function(){
+					var selectedValue = $('option:selected',this).text();
+					document.getElementById('month_dropdown').innerHTML = selectedValue;
+				})
+					
+		});
+        $('select.stateDropDown').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="stateDropDown" id="stateDropDown">' + title + '</span><span class="stateSelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+				})
+				.focus(function(){
+					$("span.stateDropDown").addClass("outer");
+				})
+				.blur(function(){
+					$("span.stateDropDown").removeClass("outer");
+				})
+				.keyup(function(){
+					var selectedValue = $('option:selected',this).text();
+					document.getElementById('stateDropDown').innerHTML = selectedValue;
+				})
+
+		});
+        $('select.CurrentSalary').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="CurrentSalary" id="CurrentSalary">' + title + '</span><span class="stateSelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+				})
+				.focus(function(){
+					$("span.CurrentSalary").addClass("outer");
+				})
+				.blur(function(){
+					$("span.CurrentSalary").removeClass("outer");
+				})
+				.keyup(function(){
+					var selectedValue = $('option:selected',this).text();
+					document.getElementById('CurrentSalary').innerHTML = selectedValue;
+				})
+
+		});
+        $('select.ExpectedSalary').each(function(){
+			var title = $(this).attr('title');
+			title = $('option:selected',this).text();
+			$(this)
+				.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+				.after('<span class="ExpectedSalary" id="ExpectedSalary">' + title + '</span><span class="expectedSelectImg"></span>')
+				.change(function(){
+					val = $('option:selected',this).text();
+					$(this).next().text(val);
+				})
+				.focus(function(){
+					$("span.ExpectedSalary").addClass("outer");
+				})
+				.blur(function(){
+					$("span.ExpectedSalary").removeClass("outer");
+				})
+				.keyup(function(){
+					var selectedValue = $('option:selected',this).text();
+					document.getElementById('ExpectedSalary').innerHTML = selectedValue;
+				})
+
+		});
+
+	};
+});
+function toggle_personalParticulars() {
+	var ele = document.getElementById("personal_particularsWrapper");
+	var text = document.getElementById("personal_particulars");
+	if(ele.style.display == "none") {    	
+		ele.style.display = "block";
+		text.innerHTML = "Hide";
+  	}
+	else {
+		ele.style.display = "none";
+		text.innerHTML = "Show";
+	}
+}
+function toggle_employment_details() {
+	var ele = document.getElementById("employment_details");
+	var text = document.getElementById("previous_employment");
+	if(ele.style.display == "none") {    	
+		ele.style.display = "block";
+		text.innerHTML = "Hide";
+  	}
+	else {
+		ele.style.display = "none";
+		text.innerHTML = "Show";
+	}
+}
+function educational_details() {
+	var ele = document.getElementById("education_hide_div_id");
+	var text = document.getElementById("educational_details");
+	if(ele.style.display == "none") {    	
+		ele.style.display = "block";
+		text.innerHTML = "Hide";
+  	}
+	else {
+		ele.style.display = "none";
+		text.innerHTML = "Show";
+	}
+}
+//Method to delete selected skill value from the current list
+function deleteSelectedSkill(selectedIndex){
+	//alert("indexToDelete "+selectedIndex);
+	
+	var currentListSize = Number($("#keySkillsListsize").val());
+	$("#keySkillDiv"+selectedIndex).text("");
+	$("#keySkillDiv"+selectedIndex).attr("id","");
+	if(selectedIndex == currentListSize){
+		//alert("u have selected last record")
+		$("#keySkillsListsize").val(currentSize - 1)
+		return false;
+	}
+	else if(selectedIndex != currentListSize) {
+		//alert("in delete else")
+		for(var nextIndex = Number(selectedIndex) + 1 ;nextIndex <= currentListSize;nextIndex++){
+			var index = Number(nextIndex) - 1;
+			//alert("index to append "+index)
+			$("#keySkillDiv"+nextIndex).attr("id","keySkillDiv"+index);
+			var prevKeySkillVal =  $("#keySkill"+nextIndex).val();
+			var appendCodeWithUpdatedIndex = '<input type="text" readonly="true" id="keySkill'+index+'" class="skills_div" name="intervieweeRegistrationForm.professionalDetails.skillSet['+index+']"></input> <div id="close" onclick="deleteSelectedSkill('+index+');"></div>';
+	    	$("#keySkillDiv"+index).html(appendCodeWithUpdatedIndex);
+		   	$("#keySkill"+index).val(prevKeySkillVal);
+		}
+		$("#keySkillsListsize").val(currentListSize - 1)
+		return false;
+	}
+	
+	
+}
+//Method to get selected value from the skill set and adding it to current list
+$(document).ready(function(){
+	$('#add_button').click(function(){
+			var e = document.getElementById("skills_selectId");
+			var strUser = e.options[e.selectedIndex].text;
+			var currentSize = Number($("#keySkillsListsize").val());
+			if(strUser == 'Select'){
+				return false;
+			}
+			for(var index=0;index<=currentSize;index++){
+				if(strUser == $("#keySkill"+index).val()){
+					return false;
+				}
+			}
+			//alert("currentSize "+currentSize);
+			var appendCodeWithIndexZero = '<div id="keySkillDiv0"><input type="text" readonly="true" id="keySkill0" class="skills_div" value="'+strUser+'" name="intervieweeRegistrationForm.professionalDetails.skillSet[0]"></input> <div id="close" onclick="deleteSelectedSkill(0);"></div></div>'
+			if(currentSize != 0){
+				//alert("in if")
+		 		for(var indexToUpdate= currentSize ;indexToUpdate >= 0 ;indexToUpdate--){
+		        	var updatedIndex = indexToUpdate + 1;
+		        	//alert("updatedIndex with index "+updatedIndex)
+		        	$("#keySkillDiv"+indexToUpdate).attr("id","keySkillDiv"+updatedIndex);
+		        	var prevKeySkillVal =  $("#keySkill"+indexToUpdate).val();
+					var appendCodeWithUpdatedIndex = '<input type="text" readonly="true" id="keySkill'+updatedIndex+'" class="skills_div" name="intervieweeRegistrationForm.professionalDetails.skillSet['+updatedIndex+']"></input> <div id="close" onclick="deleteSelectedSkill('+updatedIndex+');"></div>';
+	       			$("#keySkillDiv"+updatedIndex).html(appendCodeWithUpdatedIndex);
+		        	$("#keySkill"+updatedIndex).val(prevKeySkillVal);
+		        	
+		        }
+		        $(this).after(appendCodeWithIndexZero);
+			}else if(currentSize == 0){
+				$(this).after(appendCodeWithIndexZero);
+			}
+			$("#keySkillsListsize").val(currentSize + 1)
+	});	
+	
+});
+$(document).ready(function(){
+	var jobCode = $("#jobCodeId").val();
+	if(jobCode == ''){
+		$("#jobCodeId").val($("#jobCodeHiddenId").val());	
+	}
+	//educational_infoWrapper
+	var currentSize = Number($("#educationListsize").val());
+	if(currentSize == 0){
+		document.getElementById("educational_infoWrapper").style.display="none";
+	}
+	var expYears = $("#experiencedYearsId").val();
+	var expMonths = $("#experiencedMonthsId").val();
+	if(expYears == ''){
+		$("#experiencedYearsId").val("00")
+	}
+	if(expMonths == ''){
+		$("#experiencedMonthsId").val("00")
+	}
+	if(null != $("font:[color='red']:first").position()){
+		var desiredTop = Number($("font:[color='red']:first").position().top - Number(100));
+		$(window).scrollTop(desiredTop);
+	}
+	$('#experiencedYearsId').live("click",function() {
+           $('#experiencedYearsId').select();
+     });
+     $('#experiencedMonthsId').live("click",function() {
+           $('#experiencedMonthsId').select();
+     });
+	$("#add_education_Details").live("click",function(){
+  		addEducationDetails();
+	});//
+	$("#closeCalendar").live("click",function(){
+  		closeCurrentCalendar();
+	});
+	
+});
+function closeCurrentCalendar(){
+	var el = "calenderTable";
+	document.getElementById(el).style.display = "none";
+}
+//Method to add educational details
+function addEducationDetails(){
+	//educationDetailsListId
+	var e = document.getElementById("educationDetailsListId");
+	var selectedValue = e.options[e.selectedIndex].text;
+	createEduDetailsNewDiv(selectedValue);
+}
+
+function createEduDetailsNewDiv(selectedValue){
+	//alert("selected value"+selectedValue);
+	var currentSize = Number($("#educationListsize").val());
+		if(selectedValue == 'Select'){
+			return false;
+		}
+		for(var index=0;index<=currentSize;index++){
+			if(selectedValue == $("#QualificationFieldId"+index).val()){
+				return false;
+			}
+		}
+	var appendCodeWithIndexZero = '<div class="educational_infoFields" id="educational_infoFields0"><input id="QualificationFieldId0" name="intervieweeRegistrationForm.educationalDetails[0].qualification" value="'+selectedValue+'" readonly="readonly" class="QualificationField" type="text" onkeypress="return allowCharactersAndPeriod(event);"/><input id="examinationFieldId0" name="intervieweeRegistrationForm.educationalDetails[0].examinationAppeared" class="examinationField" type="text" onkeypress="return allowCharactersAndPeriod(event);"/><input id="yearOfPassFieldId0" name="intervieweeRegistrationForm.educationalDetails[0].yearOfPassing" class="yearOfPassField" type="text" onkeypress="return allowNumbersOnly(event);" maxlength="4"/><input id="percentageId0" name="intervieweeRegistrationForm.educationalDetails[0].percentage" class="marksPecField" type="text" maxlength="5" onkeypress="return allowNumbersAndPeriod(event);"/><div id="addMoreEducationDetails0" class="Add_button_Education"><a id="Add_button_Education0" onclick="deleteSelectedEduDetails(0)" >Delete</a></div></div>';
+	 if(currentSize != 0){
+	 	for(var indexToUpdate=currentSize;indexToUpdate >= 0 ;indexToUpdate--){
+	        	//alert("indexToUpdate "+indexToUpdate)
+	        	var updatedIndex = indexToUpdate + 1;
+	        	$("#educational_infoFields"+indexToUpdate).attr("id","educational_infoFields"+updatedIndex);
+	        	var prevQualificationVal =  $("#QualificationFieldId"+indexToUpdate).val();
+				var prevUniversityVal =  $("#examinationFieldId"+indexToUpdate).val();
+				var prevYearOfPassingVal =  $("#yearOfPassFieldId"+indexToUpdate).val();
+				var prevPercentageVal =  $("#percentageId"+indexToUpdate).val();
+				var appendCodeWithUpdatedIndex = '<input id="QualificationFieldId'+updatedIndex+'" readonly="readonly" name="intervieweeRegistrationForm.educationalDetails['+updatedIndex+'].qualification" class="QualificationField" type="text" onkeypress="return allowCharactersAndPeriod(event);"/><input id="examinationFieldId'+updatedIndex+'" name="intervieweeRegistrationForm.educationalDetails['+updatedIndex+'].examinationAppeared" class="examinationField" type="text" onkeypress="return allowCharactersAndPeriod(event);"/><input id="yearOfPassFieldId'+updatedIndex+'" name="intervieweeRegistrationForm.educationalDetails['+updatedIndex+'].yearOfPassing" class="yearOfPassField" type="text" onkeypress="return allowNumbersOnly(event);" maxlength="4"/><input id="percentageId'+updatedIndex+'" name="intervieweeRegistrationForm.educationalDetails['+updatedIndex+'].percentage" class="marksPecField" type="text" maxlength="5" onkeypress="return allowNumbersAndPeriod(event);"/><div id="addMoreEducationDetails'+updatedIndex+'" class="Add_button_Education"><a id="Add_button_Education'+updatedIndex+'" onclick="deleteSelectedEduDetails('+updatedIndex+')" >Delete</a></div>';
+       			$("#educational_infoFields"+updatedIndex).html(appendCodeWithUpdatedIndex);
+	        	$("#QualificationFieldId"+updatedIndex).val(prevQualificationVal);
+	        	$("#examinationFieldId"+updatedIndex).val(prevUniversityVal);
+	        	$("#yearOfPassFieldId"+updatedIndex).val(prevYearOfPassingVal);
+	        	$("#percentageId"+updatedIndex).val(prevPercentageVal);
+	        	
+	        }
+	        $("#educational_infoFields0").attr("id","");
+	         $(".educational_infoFields:first").before(appendCodeWithIndexZero);
+	 }else if(currentSize == 0){
+	 	$("#educational_infoWrapper").css("display","block");
+	 	$(".educational_infoFields:first").before(appendCodeWithIndexZero);
+	 }
+	 $("#educationListsize").val(currentSize + 1);
+}
+
+//Method to delete selected educational details from the list
+function deleteSelectedEduDetails(selectedIndex){
+	//alert("selectedIndex "+selectedIndex);
+	$("#educational_infoFields"+selectedIndex).text("");
+	$("#educational_infoFields"+selectedIndex).attr("id","");
+	var currentListSize = Number($("#educationListsize").val());
+	//alert("currentListSize "+currentListSize)
+	if(currentListSize == 1 && selectedIndex == 0){
+		$("#educational_infoWrapper").css("display","none");
+		$("#educationListsize").val(currentListSize - 1);
+		return false;
+	}
+	if(selectedIndex == currentListSize){
+		//alert("u have selected last record")
+		$("#educational_infoFields"+selectedIndex).text("");
+		$("#educational_infoFields"+selectedIndex).attr("id","");
+		$("#educationListsize").val(currentListSize - 1);
+		return false;
+	}
+	else if(selectedIndex != currentListSize) {
+		//alert("in delete else")
+		for(var nextIndex = Number(selectedIndex) + 1 ;nextIndex <= currentListSize;nextIndex++){
+		
+			var index = Number(nextIndex) - 1;
+			//alert("index to append "+index)
+			$("#educational_infoFields"+nextIndex).attr("id","educational_infoFields"+index);
+			
+			var prevQualificationVal =  $("#QualificationFieldId"+nextIndex).val();
+			var prevUniversityVal =  $("#examinationFieldId"+nextIndex).val();
+			var prevYearOfPassingVal =  $("#yearOfPassFieldId"+nextIndex).val();
+			var prevPercentageVal =  $("#percentageId"+nextIndex).val();
+			var appendCodeWithUpdatedIndex = '<input id="QualificationFieldId'+index+'" readonloy="readonly" name="intervieweeRegistrationForm.educationalDetails['+index+'].qualification" class="QualificationField" type="text"/><input id="examinationFieldId'+index+'" name="intervieweeRegistrationForm.educationalDetails['+index+'].examinationAppeared" class="examinationField" type="text"/><input id="yearOfPassFieldId'+index+'" name="intervieweeRegistrationForm.educationalDetails['+index+'].yearOfPassing" class="yearOfPassField" type="text"/><input id="percentageId'+index+'" maxlength="5" name="intervieweeRegistrationForm.educationalDetails['+index+'].percentage" class="marksPecField" type="text"/><div id="addMoreEducationDetails'+index+'" class="Add_button_Education"><a id="Add_button_Education'+index+'" onclick="deleteSelectedEduDetails('+index+')" >Delete</a></div>';
+       		$("#educational_infoFields"+index).html(appendCodeWithUpdatedIndex);
+	        $("#QualificationFieldId"+index).val(prevQualificationVal);
+	        $("#examinationFieldId"+index).val(prevUniversityVal);
+	        $("#yearOfPassFieldId"+index).val(prevYearOfPassingVal);
+	        $("#percentageId"+index).val(prevPercentageVal);
+	  	
+		}
+		$("#educationListsize").val(currentListSize - 1);
+		return false;
+	}
+	//$("#educationListsize").val(currentListSize - 1);
+	
+}
+
+//Method to add another company when clicked on add anothe company button
+function addAnotherCompany(currentId){
+		var currentSize = Number($("#companyListsize").val());
+		var nextIndex = currentSize + 1;
+		
+		var prevCompanyNameValue =  $("#companyName0").val();
+		var prevJoiningDateValue =  $("#joiningDate0").val();
+		var prevReasonForLeavingValue =  $("#reasonForLeavingId0").val();
+		var prevJobTitleValue =  $("#jobTitleId0").val();
+		var prevEndDateValue =  $("#EndDate0").val();
+		
+		if(prevCompanyNameValue == '' || prevJoiningDateValue == '' || prevReasonForLeavingValue == '' || prevJobTitleValue == '' || prevEndDateValue == ''){
+			return false;
+		}
+				
+        if(currentSize != 0){
+        	for(var indexToUpdate=currentSize;indexToUpdate > 0 ;indexToUpdate--){
+	        	//alert("indexToUpdate "+indexToUpdate)
+	        	var updatedIndex = indexToUpdate + 1;
+	        	$("#previousEmploymentWrapper"+indexToUpdate).attr("id","previousEmploymentWrapper"+updatedIndex);
+	        	var prevCompanyNameVal =  $("#companyName"+indexToUpdate).val();
+				var prevJoiningDateVal =  $("#joiningDate"+indexToUpdate).val();
+				var prevReasonForLeavingVal =  $("#reasonForLeavingId"+indexToUpdate).val();
+				var prevJobTitleVal =  $("#jobTitleId"+indexToUpdate).val();
+				var prevEndDateVal =  $("#EndDate"+indexToUpdate).val();
+				var appendCodeWithUpdatedIndex = '<div class="personal_paticularsLPart"><div class="personal_llText">Company Name<span class="starMark">*</span></div><input id="companyName'+updatedIndex+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+updatedIndex+'].companyName" class="personal_lInputFields1"/><div class="personal_llText">Joining Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="joiningDate'+updatedIndex+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+updatedIndex+'].joiningDate" readonly="true" onclick="showCalender(document.getElementById(\'joiningDate_link'+updatedIndex+'\'), \'joiningDate'+updatedIndex+'\');" onfocus="showCalender(document.getElementById(\'joiningDate_link'+updatedIndex+'\'), \'joiningDate'+updatedIndex+'\');"/><a id="joiningDate_link'+updatedIndex+'" onClick="showCalender(this, \'joiningDate'+updatedIndex+'\');"><div class="personal_calImg"  id="joiningCal'+updatedIndex+'"></div></a></div><div class="personal_llText">Reason for Leaving<span class="starMark">*</span></div><textarea class="reason" id="reasonForLeavingId'+updatedIndex+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+updatedIndex+'].reasonForLeaving"></textarea></div><div class="personal_paticularsRPart"><div class="personal_rlText">Job Title<span class="starMark">*</span></div><input class="personal_rInputFields" id="jobTitleId'+updatedIndex+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+updatedIndex+'].jobTitle" onkeypress="return allowCharactersAndArrowKeysAndSpaces(event,this)"/><div class="personal_llText_New">End Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="EndDate'+updatedIndex+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+updatedIndex+'].endingDate" readonly="true" onclick="showCalender(document.getElementById(\'endDate_link'+updatedIndex+'\'), \'EndDate'+updatedIndex+'\');" onfocus="showCalender(document.getElementById(\'endDate_link'+updatedIndex+'\'), \'EndDate'+updatedIndex+'\');"/><a id="endDate_link'+updatedIndex+'" onClick="showCalender(this, \'EndDate'+updatedIndex+'\');"><div class="personal_calImg" id="endCal'+updatedIndex+'"></div></a></div><div id="addMoreCompaniesDivId'+updatedIndex+'"><a class="attach_More_button" id="addButtonId" onclick="deleteSelectedCompany('+updatedIndex+')" ><div id="addCompanyTextId'+updatedIndex+'"> - Delete  </div></a></div></div><div class="hari_Small_line"></div>';
+       			$("#previousEmploymentWrapper"+updatedIndex).html(appendCodeWithUpdatedIndex);
+	        	$("#companyName"+updatedIndex).val(prevCompanyNameVal);
+	        	$("#joiningDate"+updatedIndex).val(prevJoiningDateVal);
+	        	$("#reasonForLeavingId"+updatedIndex).val(prevReasonForLeavingVal);
+	        	$("#jobTitleId"+updatedIndex).val(prevJobTitleVal);
+	        	$("#EndDate"+updatedIndex).val(prevEndDateVal);
+	        	
+	        }
+        }
+        var appendCodeNew = '<div class="previousEmploymentWrapper" id="previousEmploymentWrapper0"><div class="personal_paticularsLPart"><div class="personal_llText">Company Name<span class="starMark">*</span></div><input id="companyName0" name="intervieweeRegistrationForm.professionalDetails.companyDetails[0].companyName" class="personal_lInputFields1"/><div class="personal_llText">Joining Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="joiningDate0" name="intervieweeRegistrationForm.professionalDetails.companyDetails[0].joiningDate" readonly="true" onclick="showCalender(document.getElementById(\'joiningDate_link0\'), \'joiningDate0\');" onfocus="showCalender(document.getElementById(\'joiningDate_link0\'), \'joiningDate0\');"/><a id="joiningDate_link0" onClick="showCalender(this, \'joiningDate0\');"><div class="personal_calImg"  id="joiningCal0"></div></a></div><div class="personal_llText">Reason for Leaving<span class="starMark">*</span></div><textarea class="reason" id="reasonForLeavingId0" name="intervieweeRegistrationForm.professionalDetails.companyDetails[0].reasonForLeaving"></textarea></div><div class="personal_paticularsRPart"><div class="personal_rlText">Job Title<span class="starMark">*</span></div><input class="personal_rInputFields" id="jobTitleId0" name="intervieweeRegistrationForm.professionalDetails.companyDetails[0].jobTitle" onkeypress="return allowCharactersAndArrowKeysAndSpaces(event,this)"/><div class="personal_llText_New">End Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="EndDate0" name="intervieweeRegistrationForm.professionalDetails.companyDetails[0].endingDate" readonly="true" onclick="showCalender(document.getElementById(\'endDate_link0\'), \'EndDate0\');" onfocus="showCalender(document.getElementById(\'endDate_link0\'), \'EndDate0\');"/><a id="endDate_link0" onClick="showCalender(this, \'EndDate0\');"><div class="personal_calImg" id="endCal0"></div></a></div><div id="addMoreCompaniesDivId0"><a class="attach_More_button" id="addButtonId" onclick="addAnotherCompany(0)" ><div id="addCompanyTextId0"> + Add More Companies </div></a></div></div><div class="hari_Small_line"></div></div>';
+        
+        /** Code for adding new company data*/
+        var indexToAdd = 1;
+        $("#previousEmploymentWrapper0").attr("id","previousEmploymentWrapper"+indexToAdd);
+        var appendCodeWithIndexOne = '<div class="personal_paticularsLPart"><div class="personal_llText">Company Name<span class="starMark">*</span></div><input id="companyName'+indexToAdd+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+indexToAdd+'].companyName" class="personal_lInputFields1"/><div class="personal_llText">Joining Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="joiningDate'+indexToAdd+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+indexToAdd+'].joiningDate" readonly="true" onclick="showCalender(document.getElementById(\'joiningDate_link'+indexToAdd+'\'), \'joiningDate'+indexToAdd+'\');" onfocus="showCalender(document.getElementById(\'joiningDate_link'+indexToAdd+'\'), \'joiningDate'+indexToAdd+'\');"/><a id="joiningDate_link'+indexToAdd+'" onClick="showCalender(this, \'joiningDate'+indexToAdd+'\');"><div class="personal_calImg"  id="joiningCal'+indexToAdd+'"></div></a></div><div class="personal_llText">Reason for Leaving<span class="starMark">*</span></div><textarea class="reason" id="reasonForLeavingId'+indexToAdd+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+indexToAdd+'].reasonForLeaving"></textarea></div><div class="personal_paticularsRPart"><div class="personal_rlText">Job Title<span class="starMark">*</span></div><input class="personal_rInputFields" id="jobTitleId'+indexToAdd+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+indexToAdd+'].jobTitle" onkeypress="return allowCharactersAndArrowKeysAndSpaces(event,this)"/><div class="personal_llText_New">End Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="EndDate'+indexToAdd+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+indexToAdd+'].endingDate" readonly="true" onclick="showCalender(document.getElementById(\'endDate_link'+indexToAdd+'\'), \'EndDate'+indexToAdd+'\');" onfocus="showCalender(document.getElementById(\'endDate_link'+indexToAdd+'\'), \'EndDate'+indexToAdd+'\');"/><a id="endDate_link'+indexToAdd+'" onClick="showCalender(this, \'EndDate'+indexToAdd+'\');"><div class="personal_calImg" id="endCal'+indexToAdd+'"></div></a></div><div id="addMoreCompaniesDivId'+indexToAdd+'"><a class="attach_More_button" id="addButtonId" onclick="deleteSelectedCompany('+indexToAdd+')" ><div id="addCompanyTextId'+indexToAdd+'"> - Delete  </div></a></div></div><div class="hari_Small_line"></div>';
+        $("#previousEmploymentWrapper"+indexToAdd).html(appendCodeWithIndexOne);
+        $("#companyName"+indexToAdd).val(prevCompanyNameValue);
+    	$("#joiningDate"+indexToAdd).val(prevJoiningDateValue);
+    	$("#reasonForLeavingId"+indexToAdd).val(prevReasonForLeavingValue);
+    	$("#jobTitleId"+indexToAdd).val(prevJobTitleValue);
+    	$("#EndDate"+indexToAdd).val(prevEndDateValue);
+	    $(".previousEmploymentWrapper:first").before(appendCodeNew);
+        $("#companyListsize").val(currentSize + 1);
+}
+
+
+//Method to delete selected ompany details from the list
+function deleteSelectedCompany(selectedIndex){
+	//alert("index "+selectedIndex);
+	$("#previousEmploymentWrapper"+selectedIndex).text("");
+	$("#previousEmploymentWrapper"+selectedIndex).attr("id","");
+	var currentListSize = Number($("#companyListsize").val());
+	//alert("currentListSize "+currentListSize);
+	if(selectedIndex == currentListSize){
+		//alert("u have selected last record")
+		$("#previousEmploymentWrapper"+selectedIndex).text("");
+		$("#companyListsize").val(currentListSize - 1);
+		return false;
+	}
+	else if(selectedIndex != currentListSize) {
+		//alert("in delete else")
+		for(var nextIndex = Number(selectedIndex) + 1 ;nextIndex <= currentListSize;nextIndex++){
+		
+			//alert("in for if index "+nextIndex)
+			var index = Number(nextIndex) - 1;
+			//alert("index to append "+index)
+			$("#previousEmploymentWrapper"+nextIndex).attr("id","previousEmploymentWrapper"+index);
+			var prevCompanyName =  $("#companyName"+nextIndex).val();
+			var prevJoiningDate =  $("#joiningDate"+nextIndex).val();
+			var prevReasonForLeavingId =  $("#reasonForLeavingId"+nextIndex).val();
+			var prevJobTitleId =  $("#jobTitleId"+nextIndex).val();
+			var prevEndDateId =  $("#endDateId"+nextIndex).val();
+			var appendCode = '<div class="personal_paticularsLPart"><div class="personal_llText">Company Name<span class="starMark">*</span></div><input id="companyName'+index+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+index+'].companyName" class="personal_lInputFields1"/><div class="personal_llText">Joining Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="joiningDate'+index+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+index+'].joiningDate" readonly="true" onclick="showCalender(document.getElementById(\'joiningDate_link'+index+'\'), \'joiningDate'+index+'\');" onfocus="showCalender(document.getElementById(\'joiningDate_link'+index+'\'), \'joiningDate'+index+'\');"/><a id="joiningDate_link'+index+'" onClick="showCalender(this, \'joiningDate'+index+'\');"><div class="personal_calImg"  id="joiningCal'+index+'"></div></a></div><div class="personal_llText">Reason for Leaving<span class="starMark">*</span></div><textarea class="reason" id="reasonForLeavingId'+index+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+index+'].reasonForLeaving"></textarea></div><div class="personal_paticularsRPart"><div class="personal_rlText">Job Title<span class="starMark">*</span></div><input class="personal_rInputFields" id="jobTitleId'+index+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+index+'].jobTitle" onkeypress="return allowCharactersAndArrowKeysAndSpaces(event,this)"/><div class="personal_llText_New">End Date<span class="starMark">*</span></div><div style="float:left"><input class="personal_lInputDOBField1" id="EndDate'+index+'" name="intervieweeRegistrationForm.professionalDetails.companyDetails['+index+'].endingDate" readonly="true" onclick="showCalender(document.getElementById(\'endDate_link'+index+'\'), \'EndDate'+index+'\');" onfocus="showCalender(document.getElementById(\'endDate_link'+index+'\'), \'EndDate'+index+'\');"/><a id="endDate_link'+index+'" onClick="showCalender(this, \'EndDate'+index+'\');"><div class="personal_calImg" id="endCal'+index+'"></div></a></div><div id="addMoreCompaniesDivId'+index+'"><a class="attach_More_button" id="addButtonId" onclick="deleteSelectedCompany('+index+')" ><div id="addCompanyTextId'+index+'"> - Delete  </div></a></div></div><div class="hari_Small_line"></div>';
+       		$("#previousEmploymentWrapper"+index).html(appendCode);
+       		$("#companyName"+index).val(prevCompanyName);
+       		$("#joiningDate"+index).val(prevJoiningDate);
+       		$("#reasonForLeavingId"+index).val(prevReasonForLeavingId);
+       		$("#jobTitleId"+index).val(prevJobTitleId);
+       		$("#endDateId"+index).val(prevEndDateId);
+        	
+		}
+		$("#companyListsize").val(currentListSize - 1);
+		return false;
+	}
+	//$("#companyListsize").val(currentListSize - 1);
+	
+}
+
+function allowCharacters(evt) {
+	var charCode = (evt.which) ? evt.which : evt.keyCode;
+	return ((charCode == 8) || (charCode == 9) || (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122));
+}
+function allowCharactersAndPeriod(evt) {
+	var charCode = (evt.which) ? evt.which : evt.keyCode;
+	return ((charCode == 32) || (charCode == 46)|| (charCode == 8) || (charCode == 9) || (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122));
+}
+function allowNumbersAndPeriod(evt) {
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	if ((charCode == 46) || (charCode == 8) || (charCode >= 48 && charCode <= 57) || (charCode == 127)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function allowNumbersOnly(evt) {
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	if ((charCode == 8) || (charCode >= 48 && charCode <= 57) || (charCode == 127)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function allowCharactersAndArrowKeysAndSpaces(evt, obj) {
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	if ((charCode == 8) || (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+		return true;
+	} else {
+		if (charCode == 32) {
+			if ($.trim(obj.value) == "") {
+				return false;
+			} else {
+				obj.value = $.trim(obj.value);
+				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+}
+
+function removeDefaultData(){
+    if(jQuery("#day").val() == 'DD'){
+        jQuery("#day").val('');
+    } if(jQuery("#month").val() == 'MM'){
+        jQuery("#month").val('');
+    } if(jQuery("#year").val() == 'YYYY'){
+        jQuery("#year").val('');
+    }
+}
+
+function submitRegistrationForm(formobj, submitURL){
+    removeDefaultData();
+    formobj.action = submitURL;
+	formobj.submit();
+	if (document.getElementById("YanaSoftwareMainContainer") != null) {
+		var overlay = new loadOverlay();
+		overlay.show("YanaSoftwareMainContainer");
+	}
+
+}
+function submitForm(formobj, submitURL) {
+	formobj.action = submitURL;
+	formobj.submit();
+	if (document.getElementById("YanaSoftwareMainContainer") != null) {
+		var overlay = new loadOverlay();
+		overlay.show("YanaSoftwareMainContainer");
+	}
+}
+
+function processRequestAndExecuteScripts(targetElementId, scriptElementDivId, requestUrl, formId) {
+	$.ajax({url:requestUrl, data:$("#" + formId).serialize(), type:"POST", success:function (html) {
+		document.getElementById(targetElementId).innerHTML = html;
+		var scriptElementDiv = document.getElementById(scriptElementDivId);
+		if (scriptElementDiv != null) {
+			var scripts = parseScript(scriptElementDiv.innerHTML);
+			executeScripts(scripts);
+		}
+	}});
+
+}
+function parseScript(strcode) {
+	var scripts = new Array();
+	var scriptStartTag = "<script";
+	var scriptEndTag = "</script";
+	if (isBelowIE9()) {
+		scriptStartTag = scriptStartTag.toUpperCase();
+		scriptEndTag = scriptEndTag.toUpperCase();
+	}
+	while (strcode.indexOf(scriptStartTag) > -1 || strcode.indexOf(scriptEndTag) > -1) {
+		var s = strcode.indexOf(scriptStartTag);
+		var s_e = strcode.indexOf(">", s);
+		var e = strcode.indexOf(scriptEndTag, s);
+		var e_e = strcode.indexOf(">", e);
+		scripts.push(strcode.substring(s_e + 1, e));
+		strcode = strcode.substring(0, s) + strcode.substring(e_e + 1);
+	}
+	return scripts;
+}
+function executeScripts(scripts) {
+	for (var i = 0; i < scripts.length; i++) {
+		try {
+			eval(scripts[i]);
+		}
+		catch (ex) {
+		}
+	}
+}
+//Method to allow valid digits month text field 
+function allowPositiveIntForMonthField(evt , id , obj) {
+	 
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+    var month = document.getElementById(id).value;
+   
+	if ((charCode != 99) && (charCode != 118) && (charCode != 97) && (charCode != 120) && (charCode != 8) && (charCode < 48 || charCode > 57)) {
+		return false;
+	} else if(month.length == 0 && (charCode>47 && charCode<58)){
+    	return true;
+    }else if(month.length == 1){
+		var char = month.charAt(0);
+		var cc = month.charCodeAt(0);
+		var currentPosition = getPointerCurrentPosition(obj);
+		if(currentPosition == '0'){
+			if(cc == 48 || cc == 49 || cc == 50){
+				if(charCode == 48 && cc == 48){
+					return false;
+				}
+				if(charCode == 48 || charCode == 49){
+					if(cc == 50 && charCode == 49){
+						return false;
+					}else{
+					 return true;
+					}
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				if(charCode == 48)
+				return true;
+				else
+				return false;
+			}
+		}else if(currentPosition == '1'){
+			if(charCode == 8){
+			 	return true;
+			}
+			if(cc == 49 && (charCode == 48 || charCode == 49 || charCode == 8)){
+				return true;
+			}else if(cc == 48 && (charCode > 48 && charCode < 58 || charCode == 8)){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+    }
+}
+//Method to find current cursor point in an element
+function getPointerCurrentPosition(el) { 
+  if (el.selectionStart) { 
+    return el.selectionStart; 
+  } else if (document.selection) { 
+    el.focus(); 
+
+    var r = document.selection.createRange(); 
+    if (r == null) { 
+      return 0; 
+    } 
+
+    var re = el.createTextRange(), 
+        rc = re.duplicate(); 
+    re.moveToBookmark(r.getBookmark()); 
+    rc.setEndPoint('EndToStart', re); 
+
+    return rc.text.length; 
+  }  
+  return 0; 
+}
+function isBelowIE9(){
+	return (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) && (new Number(RegExp.$1) < 9);
+}
+
+function isAboveIE9(){
+	return (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) && (new Number(RegExp.$1) >= 9);
+}
+
+function isChrome(){
+	return navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+}
+
+function closeDivs() {
+	document.getElementById("actionMessageDivId").style.display = "none";
+}
+function codeAlign() {
+	$(".prettyprint").each(function(){
+			console.log("heyyyy");
+		$(this).find("span").first().remove();
+	});
+}

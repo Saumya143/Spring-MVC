@@ -1,0 +1,525 @@
+Spring Bean Life Cycle Management And DispatcherServlet Registration (2nd way) in Spring Mvc using WebApplicationInitializer
+
+Spring Bean Life Cycle management::
+
+Spring Bean Life cycle management means it will contain all the life cycle activity from bean creation to bean destruction.
+In spring Bean Life Cycle Management we can do in xml and also using programmatic and annotation approach as well.
+
+1.) Declarative Approach(using init-method and destroy-method)
+2.) Programmatic Approach(InitializingBean and DisposableBean)
+3.) Annotation Approach(@PostConstruct and @PreDestroy)
+
+First here we are going to see Decalative and Programmatic approach.
+
+When to use this concept::
+As we know IOC Container(BeanFactory and ApplicationContext) is a factory to create to create spring beans so suppose after IOC Container created bean (bean instantiation happened) if we want to do some operation(some check operation) to ensure that whether injection will happened with correct values or not and before IOC container is going to destroy bean from IOC container we want to do some nullification logic then we can go for this concept.
+
+Lets see Declarative Approach::
+In this approach we have to use two attribute with our bean definition
+(i) init-method (to mention our custom init() method)
+(ii) destroy-method(to mention our custom destroy() method)
+so above both are treated as Callback Methods(because it will call by the underlying container or framework right).
+Let me clear onething this concept is not any new concept in Spring but already similar concept also we aware of in J2SE and J2EE as well.
+J2SE::
+Like we know finalize() method and constructor invocation is also done by JVM so it is also we can say as callback .
+J2EE::
+I hope u already aware of Servlet Life Cycle Management right there u also know init() and destroy() method that also called by ServletContainer so then they also are Callback method only.
+Spring Jdbc::
+I hope while working with Spring JdbcTemplate u worked with RowMapper and ResultSet Functional Interfaces that provides mapRow() and extractData() that also are callback methods only.
+Hibernate::
+While dealing with HibernateCallback also u might dealt with doInHibernate() method that also called by Hibernate Framework only so it is also callback function only.
+So now we are going to see Spring callback methods involved in Spring Bean Life Cycle Management.
+1.) Spring Bean Life Cycle Declarative::
+(i) pom.xml::
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+ 
+<groupId>com.dev</groupId>
+<artifactId>SpringBeanLifeCycleDeclarative</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>jar</packaging>
+ 
+<name>SpringBeanLifeCycleDeclarative</name>
+<url>http://maven.apache.org</url>
+ 
+<properties>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+ 
+<dependencies>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>3.8.1</version>
+<scope>test</scope>
+</dependency>
+ 
+ 
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+<dependency>
+<groupId>org.springframework</groupId>
+<artifactId>spring-context-support</artifactId>
+<version>5.1.5.RELEASE</version>
+</dependency>
+ 
+</dependencies>
+ 
+<build>
+<finalName>SpringBeanLifeCycleDeclarative</finalName>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.8.1</version>
+<configuration>
+<source>1.8</source>
+<target>1.8</target>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</project>
+(ii) create a class like that::
+package com.dev.beans;
+ 
+public class MarriageEligibilityChecker {
+ 
+private String name;
+private int age;
+private String gender;
+ 
+/*
+* public MarriageEligibilityChecker(String name, int age, String gender) {
+* super(); this.name = name; this.age = age; this.gender = gender; }
+*/
+ 
+ 
+ 
+ 
+public String getName() {
+return name;
+}
+ 
+public MarriageEligibilityChecker() {
+super();
+System.out.println("MarriageEligibilityChecker:0-Param constructor");
+}
+ 
+public void setName(String name) {
+ this.name = name;
+}
+ 
+ 
+public void setAge(int age) {
+this.age = age;
+}
+ 
+ 
+public void setGender(String gender) {
+this.gender = gender;
+}
+ 
+ 
+//After Bean Instantiation this logic should be performed to check whether bean are initialized with 
+//proper values or not
+public void init()
+{
+System.out.println("init() method is called...");
+if(gender.equalsIgnoreCase("Male")
+&& age>=18) {
+System.out.println("Mr. "+name+" You are Eligible For Marriage");
+}else if(gender.equalsIgnoreCase("Female")
+&& age>=21){
+System.out.println("Mrs. "+name+" You are Eligible For Marriage");
+}
+else {
+throw new RuntimeException("You are not eligible for Marriage");
+}
+}
+ 
+public void destroy() {
+//nullification logic
+name=null;
+age=0;
+gender=null;
+ 
+System.out.println("destroy() method called...");
+}
+ 
+ 
+@Override
+public String toString() {
+return "MarriageEligibilityChecker [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+}
+ 
+}
+(iii)create a spring bean configuration file ::
+applicationContext.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+ 
+<!--Configure as a Spring Bean inside IOC -->
+<bean id="marriageEligibilityChecker" class="com.dev.beans.MarriageEligibilityChecker" 
+init-method="init" destroy-method="destroy">
+  <property name="name" value="Ashutosh"/>
+  <property name="age" value="23"/>
+  <property name="gender" value="Male"/>
+</bean>
+ 
+</beans>
+(iv) create Test class::
+package com.dev.test;
+ 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+ 
+import com.dev.beans.MarriageEligibilityChecker;
+ 
+public class BeanLifeCycleDeclarativeApproachTest1 {
+ 
+public static void main(String[] args) {
+ 
+//Create IOC Container
+ApplicationContext ctx=new ClassPathXmlApplicationContext("com/dev/cfgs/applicationContext.xml");
+ 
+//get Target Bean object from IOC container
+MarriageEligibilityChecker checker=ctx.getBean("marriageEligibilityChecker", MarriageEligibilityChecker.class);
+ 
+//checking data 
+System.out.println("MarriageEligibilityChecker data::"+checker);
+ 
+//close IOC
+((AbstractApplicationContext)ctx).close();
+}
+ 
+}
+2.) Spring Bean Life Cycle Programmatic::
+(i) same pom.xml as for declarative,same applicationContext.xml
+(ii) create a class like that::
+package com.dev.beans;
+ 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+ 
+public class MarriageEligibilityChecker implements InitializingBean,DisposableBean {
+ 
+private String name;
+private int age;
+private String gender;
+ 
+/*
+* public MarriageEligibilityChecker(String name, int age, String gender) {
+* super(); this.name = name; this.age = age; this.gender = gender; }
+*/
+ 
+ 
+ 
+ 
+public String getName() {
+return name;
+}
+ 
+public MarriageEligibilityChecker() {
+super();
+System.out.println("MarriageEligibilityChecker:0-Param constructor");
+}
+ 
+public void setName(String name) {
+ this.name = name;
+}
+ 
+ 
+public void setAge(int age) {
+this.age = age;
+}
+ 
+ 
+public void setGender(String gender) {
+this.gender = gender;
+}
+ 
+ 
+//After Bean Instantiation this logic should be performed to check whether bean are initialized with 
+//proper values or not
+public void init1()
+{
+System.out.println("init1() method is called...");
+if(gender.equalsIgnoreCase("Male")
+&& age>=18) {
+System.out.println("Mr. "+name+" You are Eligible For Marriage");
+}else if(gender.equalsIgnoreCase("Female")
+&& age>=21){
+System.out.println("Mrs. "+name+" You are Eligible For Marriage");
+}
+else {
+throw new RuntimeException("You are not eligible for Marriage");
+}
+}
+ 
+public void destroy1() {
+//nullification logic
+name=null;
+age=0;
+gender=null;
+ 
+System.out.println("destroy1() method called...");
+}
+ 
+@Override
+public void destroy() throws Exception {
+//nullification logic
+name=null;
+age=0;
+gender=null;
+ 
+System.out.println("destroy() method called...");
+}
+ 
+@Override
+public void afterPropertiesSet() throws Exception {
+System.out.println("afterPropertiesSet() method is called...");
+if(gender.equalsIgnoreCase("Male")
+&& age>=18) {
+System.out.println("Mr. "+name+" You are Eligible For Marriage");
+}else if(gender.equalsIgnoreCase("Female")
+&& age>=21){
+System.out.println("Mrs. "+name+" You are Eligible For Marriage");
+}
+else {
+throw new RuntimeException("You are not eligible for Marriage");
+}
+}
+ 
+ 
+@Override
+public String toString() {
+return "MarriageEligibilityChecker [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+}
+ 
+ 
+ 
+}
+(iii) Test class::
+package com.dev.test;
+ 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+ 
+import com.dev.beans.MarriageEligibilityChecker;
+ 
+public class BeanLifeCycleDeclarativeApproachTest1 {
+ 
+public static void main(String[] args) {
+ 
+//Create IOC Container
+ApplicationContext ctx=new ClassPathXmlApplicationContext("com/dev/cfgs/applicationContext.xml");
+ 
+//get Target Bean object from IOC container
+MarriageEligibilityChecker checker=ctx.getBean("marriageEligibilityChecker", MarriageEligibilityChecker.class);
+ 
+//checking data 
+System.out.println("MarriageEligibilityChecker data::"+checker);
+ 
+//close IOC
+((AbstractApplicationContext)ctx).close();
+}
+ 
+}
+3.) SpringMvc100code First App(2nd way to register Dispatcher Servlet)::
+(i)pom.xml::
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.dev</groupId>
+<artifactId>SpringMvc100pCodeFirstApp</artifactId>
+<packaging>war</packaging>
+<version>0.0.1-SNAPSHOT</version>
+<name>SpringMvc100pCodeFirstApp Maven Webapp</name>
+<url>http://maven.apache.org</url>
+<dependencies>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>3.8.1</version>
+<scope>test</scope>
+</dependency>
+ 
+<dependency>
+<groupId>javax.servlet</groupId>
+<artifactId>javax.servlet-api</artifactId>
+<version>4.0.1</version>
+<scope>provided</scope>
+</dependency>
+ 
+ 
+<dependency>
+<groupId>org.springframework</groupId>
+<artifactId>spring-webmvc</artifactId>
+<version>5.0.3.RELEASE</version>
+</dependency>
+ 
+<dependency>
+<groupId>org.springframework</groupId>
+<artifactId>spring-context-support</artifactId>
+<version>5.0.3.RELEASE</version>
+</dependency>
+</dependencies>
+<build>
+<finalName>SpringMvc100pCodeFirstApp</finalName>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.8.1</version>
+<configuration>
+<source>1.8</source>
+<target>1.8</target>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</project>
+(ii)
+Lets develop 1 Initializer::
+package com.dev.initializer;
+ 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
+ 
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+ 
+import com.dev.config.RootConfig;
+import com.dev.config.WebMvcConfig;
+ 
+public class Custominitializer implements WebApplicationInitializer {
+ 
+@Override
+public void onStartup(ServletContext servletContext) throws ServletException {
+AnnotationConfigWebApplicationContext rootCtx,childCtx=null;
+ContextLoaderListener listener=null;
+DispatcherServlet ds=null;
+ 
+System.out.println("Inside onStartup(-) method....");
+ 
+//create Parent IOC Container
+rootCtx=new AnnotationConfigWebApplicationContext();
+ 
+rootCtx.register(RootConfig.class);
+ 
+//create ContextLoaderListener
+listener=new ContextLoaderListener(rootCtx);
+ 
+servletContext.addListener(listener);
+ 
+//create Child IOC Container
+childCtx=new AnnotationConfigWebApplicationContext();
+ 
+childCtx.register(WebMvcConfig.class);
+ 
+//Create DispatcherServlet manually
+ds=new DispatcherServlet(childCtx);
+ 
+//Dynamic Registration of DS
+ServletRegistration.Dynamic dynamic=servletContext.addServlet("dispatcher", ds);
+ 
+//configure mapping for DispatcherServlet as well
+dynamic.addMapping("*.htm");
+ 
+//configure loadonstartup for DispatcherServlet as well
+dynamic.setLoadOnStartup(2);
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
+}
+(iii) lets develop 2 Configurations::
+package com.dev.config;
+ 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+ 
+@Configuration
+public class RootConfig {
+ 
+}
+package com.dev.config;
+ 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+ 
+import com.dev.controller.DemoController;
+ 
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackageClasses=DemoController.class)
+public class WebMvcConfig {
+ 
+ 
+//configure View Resolver
+@Bean
+public ViewResolver createViewResolver() {
+ViewResolver vr=null;
+ 
+vr=new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
+ 
+return vr;
+}
+ 
+ 
+}
+(iv)controller::
+package com.dev.controller;
+ 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+ 
+@Controller
+public class DemoController {
+ 
+@GetMapping("/home.htm")
+public String showHome() {
+return "home";  //logical view name
+}
+ 
+}
+(v) create a file named home.jsp ::
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome Page</title>
+</head>
+<body>
+This is Welcome Page...
+</body>
+</html>
+6Bikash Pati and 5 others
+Like
+Comment
+Save
+Comments
+Soumya Ranjan Mohanty
+Write a comment...
+
+Edit Doc

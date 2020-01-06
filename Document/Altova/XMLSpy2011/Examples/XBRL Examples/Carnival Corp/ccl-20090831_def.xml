@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!--  EDGAR Online I-Metrix Xcelerate Taxonomy Definition Linkbase, based on XBRL 2.1  http://www.edgar-online.com/  -->
+<!--  Version: 6.0.14 -->
+<!--  Creation date: 2009-09-30T10:10Z -->
+<!--  Copyright (c) 2005-2009 EDGAR Online, Inc. All Rights Reserved. -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_StatementOfIncomeAlternative" roleURI="http://www.carnival.com/taxonomy/role/StatementOfIncomeAlternative"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_StatementOfFinancialPositionClassified" roleURI="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassified"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_StatementOfFinancialPositionClassifiedParen" roleURI="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassifiedParenthetical"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_StatementOfCashFlowsIndirect" roleURI="http://www.carnival.com/taxonomy/role/StatementOfCashFlowsIndirect"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsOrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsOrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsDebtDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDebtDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsContingenciesDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsContingenciesDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsComprehensiveIncomeNoteTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsComprehensiveIncomeNoteTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsSegmentReportingDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsSegmentReportingDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsEarningsPerShareTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsEarningsPerShareTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsFairValueMeasurementInputsDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsFairValueMeasurementInputsDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsStockholdersEquityNoteDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsStockholdersEquityNoteDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsMinorityInterestDisclosureTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsMinorityInterestDisclosureTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_NotesToFinancialStatementsDescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock" roleURI="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_EntityInformation" roleURI="http://www.carnival.com/taxonomy/role/EntityInformation"/>
+  <roleRef xlink:type="simple" xlink:href="ccl-20090831.xsd#IMetrix_CommonDomainMembers" roleURI="http://www.carnival.com/taxonomy/role/CommonDomainMembers"/>
+  <arcroleRef xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all" arcroleURI="http://xbrl.org/int/dim/arcrole/all"/>
+  <arcroleRef xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default" arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default"/>
+  <arcroleRef xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain" arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain"/>
+  <arcroleRef xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member" arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member"/>
+  <arcroleRef xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension" arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension"/>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/StatementOfIncomeAlternative">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassified">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/StatementOfFinancialPositionClassifiedParenthetical">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/StatementOfCashFlowsIndirect">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsOrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDebtDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsContingenciesDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsComprehensiveIncomeNoteTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsSegmentReportingDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsEarningsPerShareTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsFairValueMeasurementInputsDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsStockholdersEquityNoteDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsMinorityInterestDisclosureTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/NotesToFinancialStatementsDescriptionOfNewAccountingPronouncementsNotYetAdoptedTextBlock">
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/EntityInformation">
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_CurrentFiscalYearEndDate" xlink:label="dei_CurrentFiscalYearEndDate"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityCentralIndexKey" xlink:label="dei_EntityCentralIndexKey"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityCommonStockSharesOutstanding" xlink:label="dei_EntityCommonStockSharesOutstanding"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityFilerCategory" xlink:label="dei_EntityFilerCategory"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityRegistrantName" xlink:label="dei_EntityRegistrantName"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityTextBlock" xlink:label="dei_EntityTextBlock"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_LegalEntityAxis" xlink:label="dei_LegalEntityAxis"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_StatementTable" xlink:label="us-gaap_StatementTable"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_TradingSymbol" xlink:label="dei_TradingSymbol"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="dei_EntityTextBlock" xlink:to="us-gaap_StatementTable" order="1.0000" xbrldt:closed="true" xbrldt:contextElement="segment" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_TradingSymbol" order="1.0100" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_EntityRegistrantName" order="1.0200" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_EntityCentralIndexKey" order="1.0300" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_CurrentFiscalYearEndDate" order="1.0400" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_EntityFilerCategory" order="1.0500" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityTextBlock" xlink:to="dei_EntityCommonStockSharesOutstanding" order="1.0600" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="us-gaap_StatementTable" xlink:to="dei_LegalEntityAxis" order="1.0000" priority="2" use="optional" xbrldt:targetRole="http://www.carnival.com/taxonomy/role/CommonDomainMembers"/>
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://www.carnival.com/taxonomy/role/CommonDomainMembers">
+    <loc xlink:type="locator" xlink:href="ccl-20090831.xsd#ccl_CarnivalPLCMember" xlink:label="ccl_CarnivalPLCMember"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityDomain" xlink:label="dei_EntityDomain"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_EntityDomain" xlink:label="dei_EntityDomain_2"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd#dei_LegalEntityAxis" xlink:label="dei_LegalEntityAxis"/>
+    <loc xlink:type="locator" xlink:href="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_ParentCompanyMember" xlink:label="us-gaap_ParentCompanyMember"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityDomain" xlink:to="us-gaap_ParentCompanyMember" order="6.0100" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="dei_EntityDomain" xlink:to="ccl_CarnivalPLCMember" order="6.0200" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="dei_LegalEntityAxis" xlink:to="dei_EntityDomain" order="5.0000" priority="2" use="optional"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="dei_LegalEntityAxis" xlink:to="dei_EntityDomain_2" order="5.0000" priority="2" use="optional"/>
+  </definitionLink>
+</linkbase>

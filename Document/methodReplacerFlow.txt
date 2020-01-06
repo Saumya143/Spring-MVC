@@ -1,0 +1,18 @@
+1.IOC container is created.xml file is loaded.then it checks whether 
+]the xml file is welformed or not and valid or not
+2.then inMemory meta data of ApplicationContxt.xml file is created.
+3.then  preInstantiation of singleton scope bean will take place
+4.then it goes to applicationContext.xml file and founds all the two class are singleton scope then load
+ the dependent class and create the object and store in internal hash map.
+5.In BankService class also singleton scope but its having replace-method tag.
+6.internally create inmemory proxey class in Cg library
+7.on that proces object is created on that aware injection is happened
+8.then it kept in internal hash map or cache
+9.container calls the ctx.getBeans method
+10.then it goes to the internal Hashmap and gets the proxey class object from the internal Hashmap
+11.then it goes to the methodreplacerTest class and call the service.calcinterstAmount()
+12.then it goes to proxey class and execute that method
+13.After that it calss the reimplement method in proxey class
+14.then it goes to the implement MethodReplace class and execute the logic 
+15.it calculate the logic and return back to the proxey class
+16.retValue will send the values to the client Application and displays the values.

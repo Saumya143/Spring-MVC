@@ -1,0 +1,1 @@
+This is the preferred location for adding user-dictionaries for the Spell-Checker in ALTOVA products.
